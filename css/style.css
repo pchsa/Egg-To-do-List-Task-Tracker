@@ -1,0 +1,555 @@
+/* General styling */
+* {
+    box-sizing: border-box;
+    font-family: 'Sora';
+    text-decoration: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #FFFEFC;
+}
+
+
+/* Nav bar */
+header {
+    background-color: #FFFEFC;
+    display: flex;
+    justify-content: center;
+    padding: 0.3rem 0;
+}
+
+nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    width: 70%;
+}
+
+nav .logo a {
+    font-weight: 700;
+    font-size: 36px;
+
+    color: #FFCC2F;
+}
+
+nav .navLinks {
+    display: flex;
+    gap: 3rem;
+}
+
+nav a {
+    font-weight: 600;
+    font-size: 13px;
+    color: #333333;
+}
+
+nav a:hover {
+    text-decoration: underline #FFCC2F 3px;
+}
+
+nav .logo a:hover {
+    text-decoration: none;
+}
+
+
+/* Responsive nav menu */
+nav #menuNavBtn {
+    display: none;
+    position: absolute;
+    right: 0;
+    margin: 0.5rem;
+
+    color: #333333;
+}
+
+nav #menuNavBtn:hover {
+    cursor: pointer;
+}
+
+nav #menuNav {
+    position: absolute;
+    top: 3rem;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    z-index: 1;
+
+    border-radius: 1rem;
+    background-color: #5E563D;
+
+}
+
+nav #menuNav a {
+    margin: 1rem;
+    color: #FFFEFC;
+}
+
+nav #menuNav a:hover {
+    text-decoration: none;
+    color: #FFCC2F;
+}
+
+@media only screen and (max-width: 680px) {
+    nav .navLinks {
+        display:none;
+    }
+
+    nav #menuNavBtn {
+        display: block;
+    }
+
+    nav #menuNav {
+        display: none;
+    }
+}
+
+
+/* home page styling */
+.heroContainer {
+    margin: auto;   
+    margin-top: 10vw;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70%;
+
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.heroContainer h1 {
+    font-weight: 600;
+    font-size: 55px;
+    line-height: 50px;
+
+    color: #FFCA24;
+}
+
+.heroContainer h2 {
+    font-weight: 600;
+    font-size: 27px;
+    line-height: 38px;
+
+    color: #333333;
+}
+
+.heroContainer button {
+    margin-top: 50px;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 25px;
+
+    background: #FFD963;
+}
+
+.hero-bird {
+    position: absolute;
+    bottom: 0;
+    align-self: flex-end;
+    width: 30%;   
+}
+
+
+button {
+    padding: 10px 20px;
+
+    background: #FDECA6;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 500px;
+    border: none;
+    font-weight: 600;
+
+    color: rgba(51, 51, 51, 0.7);
+}
+
+button a {
+    color: rgba(51, 51, 51, 0.7);
+}
+
+button:hover {
+    cursor: pointer;
+    filter: brightness(95%);
+}
+
+/* todo list tasks (right */
+.taskContainer {
+    margin: auto; 
+    padding: 1rem;
+    
+    display: flex;
+    flex-direction: column;
+    
+    width: 70%;
+    color: rgb(51, 51, 51, 0.8);
+}
+.taskContainer span {
+    font-size: 1rem;
+}
+
+.taskContainer span:hover {
+    color: rgb(51, 51, 51, 0.9);
+    cursor: pointer;
+}
+
+.tasks h1 {
+    margin-bottom: 1rem;
+}
+
+.tasks {
+    display: flex;
+    flex-direction: column;
+
+    gap: .7rem;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .2rem .5rem;
+    border-radius: .5rem;
+}
+
+.task:hover {
+    background-color: rgb(255,255,255,0.5);
+}
+
+.task:hover .taskDelete {
+    display: flex;
+}
+
+.taskCheck {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.taskDelete {
+    font-size: 12px;
+    display: none;
+    align-items: center;
+}
+
+
+.task.add {
+    margin: .5rem 0;
+}
+
+#addTaskInput {
+    font: 16px Sora;
+    font-weight: 600;
+    background-color: transparent;
+    outline: none;
+    color: rgb(51, 51, 51, 0.8);
+    outline-style: none;
+    border:none;
+    border-bottom:1px solid rgb(51, 51, 51, 0.8);
+}
+
+#addTaskInput::placeholder {
+    color: rgb(51, 51, 51, 0.5);
+}
+
+.completedTasks p{
+    text-decoration: line-through;
+}
+
+/* todo list lists (left) */
+.listContainer {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+
+    color: #333333;
+    background-color: #FFFEFC;
+
+    padding: 1rem;
+    width: 15%;
+    height: calc(100% - 55.2px);
+}
+
+.listContainer ul {
+    width: 100%;
+    border-top: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    list-style: none;
+    word-break: break-all;
+}
+
+.listContainer li > *, .addList > *{
+    pointer-events: none;
+}
+
+
+.listContainer li, .addList {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+    padding: .5rem;
+    border-radius: 8px;
+}
+
+.listContainer li:hover, .addList:hover {
+    cursor: pointer;
+    background-color: rgb(51, 51, 51, 0.2);
+}
+
+
+.addList {
+    color: rgb(51, 51, 51, 0.8);
+}
+
+@media only screen and (max-width: 1150px) {
+    .listContainer h1 {
+        display: none;
+    }
+
+    .listContainer p {
+        display: none;
+    }
+
+    .listContainer {
+        align-items: center;
+    }
+
+    .listContainer li, .addList {
+        justify-content: center;
+    }
+
+    .taskContainer {
+        margin-right: 0;
+        width: 85%;
+    }
+}
+
+
+
+
+.modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    background: rgba(94, 86, 61, 0.5);
+}
+
+.modalBox {    
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+    max-height: 80%;
+    width: 375px;
+    background: #FFFEFC;
+    color: #333333;
+    border-radius: 15px;
+}
+
+.modalBox .close {
+    position: absolute;
+    align-self: flex-end;
+    font-size: 28px;
+    line-height: 20px;
+}
+
+.modalBox .close:hover {
+    cursor: pointer;
+}
+
+.modalBox h2 {
+    margin-top: 1rem;
+}
+
+.modalBox .inputRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 80%;
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.modalBox .inputRow * {
+    width: 50%;
+    font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.timer-container {
+    color: #333333;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 70%;
+    height: 550px;
+    position: relative;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.timer-container h1 {
+    margin-top: 1rem;
+    font-weight: 600;
+    font-size: 40px;
+
+}
+
+.timer-container span {
+    position: absolute;
+    align-self: flex-end;
+    font-size: 30px;
+}
+
+.timer-container span:hover {
+    cursor: pointer;
+}
+
+.timer-container #timerCountdown {
+    font-weight: 600;
+    font-size: 40px;
+}
+
+.timer-container #chooseStudy {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.timer-container #timerBtn {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.timer-container #confirmation {
+    display: none;
+    position: absolute;
+    bottom: -50px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.modal #chooseStudyModal {
+    min-height: 500px;
+}
+
+.modal #chooseStudyModal h3{
+    align-self: flex-start;
+}
+
+.modal #chooseStudyModal ul {
+    width: 100%;
+    list-style: none;
+}
+
+.modal #chooseStudyModal li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: .5rem;
+    border-radius: 8px;
+}
+
+.modal #chooseStudyModal li:hover {
+    cursor: pointer;
+    background-color: rgb(51, 51, 51, 0.2);
+}
+
+
+.progressContainer {
+    color:#333333;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    padding-top: 1.5rem;
+}
+
+.birdArmy {
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.birdItem {
+    margin: .3rem;
+    position: relative;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 90px;
+}
+
+
+.birdItem .popUp {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    width: 200px;
+    background-color: #FDECA6;
+    text-align: center;
+    border-radius: 6px;
+    padding: .5rem;
+    position: absolute;
+    z-index: 1;
+
+    font-weight: 600;
+    color:rgb(51, 51, 51, 0.8);
+    /* box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25); */
+}
+
+.birdItem .popUpArrow {
+    position: absolute;
+    display: none;
+    width: 0;
+    z-index: 1;
+    border-style: solid;
+    border-color: #FDECA6  transparent;
+    border-width: 0 10px 10px;
+    top: 100%;
+    margin-left: -10px;
+}
+
+.birdSmile {
+    display: none;
+}
+
+.birdEye {
+    display: block;
+}
+
+.birdItem:hover .popUp, .birdItem:hover .popUpArrow, .birdItem:hover .birdSmile{
+    display: block;
+}
+
+.birdItem:hover .birdEye {
+    display: none;
+}
