@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do List</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css\style.css">
+
+    <!-- icons -->  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+
+    <script src="js\jquery-3.6.0.min.js" defer></script>
+    <script src="js\script.js" defer></script>
+    <script src="js\todo.js" defer></script>
+
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><a href="index.html">Egg</a></div>
+            <div class="navLinks">
+                <a href="index.html">Home</a>
+                <a href="todo.html">To-do List</a>
+                <a href="timer.html">Timer</a>
+                <a href="progress.html">Progress</a>
+            </div>
+            <span id="menuNavBtn" class="material-symbols-outlined">menu</span>
+            <div id="menuNav">
+                <a href="index.html">Home</a>
+                <a href="todo.html">To-do List</a>
+                <a href="timer.html">Timer</a>
+                <a href="progress.html">Progress</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="listContainer">
+        <h1>To-do List</h1>
+        <ul>
+            <!-- Store to-do Lists here -->
+        </ul>
+        <div class="addList">
+            <span id="addListBtn" class="material-symbols-outlined">
+                add_circle
+            </span>
+            <p>Add List</p>
+        </div>
+    </div>
+
+    
+    <div class="taskContainer">
+        <h1>Tasks</h1>
+        <div class="tasks currentTasks">
+            <!-- Store tasks in here -->
+        </div>
+        <div class="task add">
+            <div class="taskCheck">
+                <span id="addTaskBtn" class="material-symbols-outlined">
+                    add_circle
+                </span>
+                <input id="addTaskInput" type='text' placeholder='Add Task' />
+            </div>
+        </div>
+        <div class="tasks completedTasks">
+            <h3>Completed Tasks</h3>
+            <!-- Store completed tasks here -->
+        </div>
+    </div>
+
+    <div class="modal">
+        <div class="modalBox" id="addListModal">
+            <span class="close">&times;</span>
+            <h2>Add a new list</h2>
+            <div class="inputRow">
+                List Name:
+                <input id="listNameInput" type="text" placeholder="List name">
+            </div>
+            <div class="inputRow">
+                Color:
+                <select name="Colors" id="listColorSelect">
+                    <option value="yellow">Yellow</option>
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                </select>
+            </div>
+            <p></p>
+            <button>Add List</button>
+        </div>
+    </div>
+</body>
+</html>

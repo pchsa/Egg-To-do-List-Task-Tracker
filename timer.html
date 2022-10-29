@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css\style.css">
+    <!-- menu icon -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,700,0,200" />
+
+    <script src="js\jquery-3.6.0.min.js" defer></script>
+    <script src="js\script.js" defer></script>
+    <script src="js\timer.js" defer></script>
+
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><a href="index.html">Egg</a></div>
+            <div class="navLinks">
+                <a href="index.html">Home</a>
+                <a href="todo.html">To-do List</a>
+                <a href="timer.html">Timer</a>
+                <a href="progress.html">Progress</a>
+            </div>
+            <span id="menuNavBtn" class="material-symbols-outlined">menu</span>
+            <div id="menuNav">
+                <a href="index.html">Home</a>
+                <a href="todo.html">To-do List</a>
+                <a href="timer.html">Timer</a>
+                <a href="progress.html">Progress</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="timer-container">
+        <h1>Study Timer</h1>
+        <span id="settings" class="material-symbols-outlined">settings</span>
+        <h2 id="timerMessage">Start studying to hatch an egg</h2>
+        <!-- Placing this svg in an object does not enable me to change the colour, could not find other solution -->
+        <svg width="202" height="257" viewBox="0 0 202 257" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M173.238 57.263C152.721 20.337 127.091 0 101.068 0C75.045 0 49.416 20.337 28.898 57.263C11.943 87.781 0.987 125.801 0.987 154.125C0.987 181.462 11.234 207.058 29.842 226.196C48.613 245.504 73.908 256.136 101.069 256.136C128.23 256.136 153.525 245.503 172.296 226.196C190.903 207.057 201.15 181.462 201.15 154.125C201.149 125.801 190.193 87.78 173.238 57.263ZM101.068 244.137C51.676 244.137 12.987 204.599 12.987 154.125C12.987 100.581 54.154 12 101.068 12C147.982 12 189.149 100.581 189.149 154.125C189.149 204.599 150.46 244.137 101.068 244.137Z" fill="#333333"/>
+            <path id="eggBody" d="M101.068 244.137C51.676 244.137 12.987 204.599 12.987 154.125C12.987 100.581 54.154 12 101.068 12C147.982 12 189.149 100.581 189.149 154.125C189.149 204.599 150.46 244.137 101.068 244.137Z" fill="#FDECA6"/>
+        </svg>
+        <div id="timerCountdown">25:00</div>
+        <button id="chooseStudy">Currently working on: Tasks</button>
+        <button id="timerBtn">Start</button>
+        <!-- confirmation to be displayed before user stops timer -->
+        <div id="confirmation">Are you sure? <br> You won't save this session</div>
+    </div>
+
+    <!-- Store modal boxes in here -->
+    <div class="modal">
+        <div id="timerSettingsModal" class="modalBox">
+            <span class="close">&times;</span>
+            <h2>Timer Settings</h2>
+            <div class="inputRow">
+                Study Length
+                <input id="studyLengthInput" type="number" min="0" placeholder="25 (minutes)">
+            </div>
+            <div class="inputRow">
+                Break Length
+                <input id="breakLengthInput" type="number" min="0" placeholder="5 (minutes)">
+            </div>
+            <p></p>
+            <button>OK</button>
+        </div>
+
+        <div id="chooseStudyModal" class="modalBox">
+            <h3>Choose something to work on</h2>
+            <span class="close">&times;</span>
+            <ul>
+                <!-- Store to-do Lists in here -->
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
